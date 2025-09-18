@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic);
+
 html,
 body {
   width: 100%;
@@ -6,8 +7,32 @@ body {
 }
 
 body {
-  background: #252432;
+  background: #FFC0CB; /* Pinkish background */
+  overflow: hidden; /* Hide overflow to prevent scrollbars from the ribbons */
 }
+
+/* Ribbon styles */
+body::before,
+body::after {
+  content: "🎀"; /* Ribbon emoji */
+  position: absolute;
+  font-size: 50px; /* Adjust size as needed */
+  z-index: 10;
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+body::before {
+  top: 20px;
+  left: 20px;
+  transform: rotate(-20deg);
+}
+
+body::after {
+  top: 30px;
+  right: 30px;
+  transform: rotate(20deg);
+}
+
 
 #cake {
   display: block;
@@ -129,4 +154,12 @@ body {
 }
 .text h1 {
   font-size: 1.4em;
+}
+
+.song-player {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
 }
